@@ -111,6 +111,19 @@ function Article (entry) {
   newSpan.addEventListener('click', (event) => {
     newDiv.classList.toggle('article-open');
   })
+
+  newDiv.classList.add('article');
+  newDiv.appendChild(newH2).textContent = entry.title;
+  newDiv.appendChild(newP).textContent = entry.date;
+  newP.classList.add('date');
+  newDiv.appendChild(firstParagraph).textContent = entry.firstParagraph;
+  newDiv.appendChild(secondParagraph).textContent = entry.secondParagraph;
+  newDiv.appendChild(thirdParagraph).textContent = entry.thirdParagraph;
+
+  newSpan.textContent = "Expand";
+  newDiv.appendChild(newSpan).classList.add('expandButton');
+  return newDiv;
+}
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
   
   <div class="article">
