@@ -85,6 +85,17 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'My favorite poem',
+    date: 'Sept 22, 2019',
+    firstParagraph: `Master of my fate, Captain of my soul - Out of the night that covers me, Black as the pit from pole to pole, 
+          I thank whatever gods may be For my unconquerable soul. In the fell clutch of circumstance I have not winced nor cried aloud. 
+          Under the bludgeonings of chance My head is bloody, but unbowed.` 
+    secondParagraph: `Beyond this place of wrath and tears,Looms but the Horror of the shade, And yet the menace of the years 
+          Finds and shall find me unafraid.`
+    thirdParagraph: `It matters not how strait the gate, How charged with punishments the scroll,I am the master of my fate, 
+          I am the captain of my soul.`
   }
 ];
 
