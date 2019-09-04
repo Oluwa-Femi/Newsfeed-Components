@@ -99,6 +99,14 @@ const data = [
   }
 ];
 
+function Article (entry) {
+  let newDiv = document.createElement('div');
+  let newH2 = document.createElement('h2');
+  let newP = document.createElement('p');
+  let firstParagraph = document.createElement('p');
+  let secondParagraph = document.createElement('p');
+  let thirdParagraph = document.createElement('p');
+  let newSpan = document.createElement('span');
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
   
   <div class="article">
