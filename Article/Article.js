@@ -91,9 +91,9 @@ const data = [
     date: 'Sept 22, 2019',
     firstParagraph: `Master of my fate, Captain of my soul - Out of the night that covers me, Black as the pit from pole to pole, 
           I thank whatever gods may be For my unconquerable soul. In the fell clutch of circumstance I have not winced nor cried aloud. 
-          Under the bludgeonings of chance My head is bloody, but unbowed.` 
+          Under the bludgeonings of chance My head is bloody, but unbowed.`, 
     secondParagraph: `Beyond this place of wrath and tears,Looms but the Horror of the shade, And yet the menace of the years 
-          Finds and shall find me unafraid.`
+          Finds and shall find me unafraid.`,
     thirdParagraph: `It matters not how strait the gate, How charged with punishments the scroll,I am the master of my fate, 
           I am the captain of my soul.`
   }
@@ -113,15 +113,21 @@ function Article (entry) {
   })
 
   newDiv.classList.add('article');
-  newDiv.appendChild(newH2).textContent = entry.title;
-  newDiv.appendChild(newP).textContent = entry.date;
+  newH2.textContent = entry.title;
+  newP.textContent = entry.date;
   newP.classList.add('date');
-  newDiv.appendChild(firstParagraph).textContent = entry.firstParagraph;
-  newDiv.appendChild(secondParagraph).textContent = entry.secondParagraph;
-  newDiv.appendChild(thirdParagraph).textContent = entry.thirdParagraph;
+  firstParagraph.textContent = entry.firstParagraph;
+  secondParagraph.textContent = entry.secondParagraph;
+  thirdParagraph.textContent = entry.thirdParagraph;
 
+  const allElement = [newH2, newP, firstParagraph, secondParagraph, thirdParagraph, newSpan]
+  console.log (allElement);
+  allElement.forEach(element => newDiv.appendChild(element))
+
+
+  newSpan.classList.add('expandButton');
   newSpan.textContent = "Expand";
-  newDiv.appendChild(newSpan).classList.add('expandButton');
+
   return newDiv;
 }
 
@@ -131,7 +137,8 @@ data.map((entry) => {
   let article = Article(entry);
   articleContainer.appendChild(article);
 });
-/* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
+
+/*1: Create a function that creates a component. You will want your component to look like the template below: 
   
   <div class="article">
     <h2>{title of the article}</h2>
