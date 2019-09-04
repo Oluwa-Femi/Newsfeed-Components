@@ -124,6 +124,13 @@ function Article (entry) {
   newDiv.appendChild(newSpan).classList.add('expandButton');
   return newDiv;
 }
+
+const articleContainer = document.querySelector('.articles');
+
+data.map((entry) => {
+  let article = Article(entry);
+  articleContainer.appendChild(article);
+});
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
   
   <div class="article">
