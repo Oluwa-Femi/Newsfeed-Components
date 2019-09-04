@@ -34,7 +34,7 @@ function menuExecutor(array) {
   return div;
 }
 
-
+menuExecutor(menuItems);
 /* 
 
   Step 1: Write a function that will create a menu component as seen below:
