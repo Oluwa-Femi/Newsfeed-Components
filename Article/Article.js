@@ -107,6 +107,10 @@ function Article (entry) {
   let secondParagraph = document.createElement('p');
   let thirdParagraph = document.createElement('p');
   let newSpan = document.createElement('span');
+
+  newSpan.addEventListener('click', (event) => {
+    newDiv.classList.toggle('article-open');
+  })
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
   
   <div class="article">
