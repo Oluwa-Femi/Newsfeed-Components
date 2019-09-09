@@ -85,10 +85,60 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'My favorite poem',
+    date: 'Sept 22, 2019',
+    firstParagraph: `Master of my fate, Captain of my soul - Out of the night that covers me, Black as the pit from pole to pole, 
+          I thank whatever gods may be For my unconquerable soul. In the fell clutch of circumstance I have not winced nor cried aloud. 
+          Under the bludgeonings of chance My head is bloody, but unbowed.`, 
+    secondParagraph: `Beyond this place of wrath and tears,Looms but the Horror of the shade, And yet the menace of the years 
+          Finds and shall find me unafraid.`,
+    thirdParagraph: `It matters not how strait the gate, How charged with punishments the scroll,I am the master of my fate, 
+          I am the captain of my soul.`
   }
 ];
 
-/* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
+function Article (entry) {
+  let newDiv = document.createElement('div');
+  let newH2 = document.createElement('h2');
+  let newP = document.createElement('p');
+  let firstParagraph = document.createElement('p');
+  let secondParagraph = document.createElement('p');
+  let thirdParagraph = document.createElement('p');
+  let newSpan = document.createElement('span');
+
+  newSpan.addEventListener('click', (event) => {
+    newDiv.classList.toggle('article-open');
+  })
+
+  newDiv.classList.add('article');
+  newH2.textContent = entry.title;
+  newP.textContent = entry.date;
+  newP.classList.add('date');
+  firstParagraph.textContent = entry.firstParagraph;
+  secondParagraph.textContent = entry.secondParagraph;
+  thirdParagraph.textContent = entry.thirdParagraph;
+
+  const allElement = [newH2, newP, firstParagraph, secondParagraph, thirdParagraph, newSpan]
+  console.log (allElement);
+  allElement.forEach(element => newDiv.appendChild(element))
+
+
+  newSpan.classList.add('expandButton');
+  newSpan.textContent = "Expand";
+
+  return newDiv;
+}
+
+const articleContainer = document.querySelector('.articles');
+
+data.map((entry) => {
+  let article = Article(entry);
+  articleContainer.appendChild(article);
+});
+
+/*1: Create a function that creates a component. You will want your component to look like the template below: 
   
   <div class="article">
     <h2>{title of the article}</h2>
